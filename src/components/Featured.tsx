@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useRef, useLayoutEffect } from "react"
 
 import MoviesContext from "../context/MoviesContext"
 import { solvePosterUrl } from "../utils/requestSolver"
@@ -11,10 +11,18 @@ import { FaCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa"
 
 function Featured(): JSX.Element {
 	const { featuredMovies } = useContext(MoviesContext)
-	const [scroll, setScroll] = useState(-650)
+	const [scrollSpeed, setScrollSpeed] = useState(0)
 
+	useLayoutEffect(() => {
+		setScrollSpeed(MOVIE_ROW.current?.clientWidth || 0)
+	}, [])
+	// Horizontal Scroll
+	const MOVIE_ROW = useRef<HTMLDivElement>(null)
 	const MOVIE_SIZE = 192
-	const SCROLL_SPEED = Math.round(window.innerWidth / 3) //250
+	const SCROLL_SPEED = Math.round(MOVIE_ROW.current?.clientWidth || 0) //250
+	const DEFAULT_SHIFT = 0
+
+	const [scroll, setScroll] = useState(DEFAULT_SHIFT)
 
 	function handleHorizontalMenu(side: "left" | "right"): void {
 		const LIST_LENGTH = (featuredMovies?.length || 0) * MOVIE_SIZE
@@ -48,7 +56,11 @@ function Featured(): JSX.Element {
 					<FaChevronRight />
 				</div>
 				<Carousel>
-					<div className="movieRow-List" style={{ marginLeft: scroll }}>
+					<div
+						className="movieRow-List"
+						ref={MOVIE_ROW}
+						style={{ marginLeft: scroll }}
+					>
 						{featuredMovies?.map((movie, key) => (
 							<div key={key} className="item">
 								<img

@@ -76,8 +76,6 @@ export const Carousel = styled.div`
 		transition: margin-left ease 0.3s;
 
 		box-sizing: content-box;
-		padding: 0 2rem;
-		margin-left: -2rem;
 
 		width: 100%;
 
@@ -87,7 +85,8 @@ export const Carousel = styled.div`
 			display: inline-block;
 			width: 12rem;
 
-			margin-right: 17px;
+			//margin-left: -30px;
+			margin: 0 0.3rem;
 
 			img {
 				margin: 0 auto;
