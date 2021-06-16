@@ -1,21 +1,26 @@
-import React from "react"
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-import { movieList  } from "./services/requests"
-
-import Row from "./components/Row"
-
-function App(){
-   return (
-      <div className="page">
-         <section className="moviesLists">
-            {movieList.map((item, key) => {
-               <div key={key}>
-                  {item.title}
-               </div>
-            })}
-         </section>
-      </div>
-   )
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-export default App
+export default App;
