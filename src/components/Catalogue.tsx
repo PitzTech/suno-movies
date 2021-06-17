@@ -21,7 +21,7 @@ import {
 	GridButton,
 	CatalogueMovies,
 	MovieItem
-} from "../styles/components/Catalogue"
+} from "../styles/sections/Catalogue"
 import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
 
 import { FaCircle, FaStar } from "react-icons/fa"

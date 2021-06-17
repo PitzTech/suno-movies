@@ -11,7 +11,7 @@ import { limitText, shuffle } from "../utils/formatters"
 
 // Visual
 
-import { FeaturedElement, Carousel, MovieItem } from "../styles/components/Featured"
+import { FeaturedElement, Carousel, MovieItem } from "../styles/sections/Featured"
 import { CentralDelimiter } from "../styles/containers"
 import { FaCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa"
 import { useEffect } from "react"

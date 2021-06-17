@@ -5,6 +5,10 @@ export interface Movie {
 	poster_path: string
 	overview: string
 	genre_ids: number[]
+	genres: {
+		id: number
+		name: string
+	}[]
 	backdrop_path: string
 	vote_average: number
 	number_of_seasons?: number
