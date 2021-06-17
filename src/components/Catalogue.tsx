@@ -24,7 +24,7 @@ import {
 } from "../styles/components/Catalogue"
 import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
 
-import { FaCircle, FaChevronDown, FaStar } from "react-icons/fa"
+import { FaCircle, FaStar } from "react-icons/fa"
 import { BsGridFill } from "react-icons/bs"
 import { TiThList } from "react-icons/ti"
 

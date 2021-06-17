@@ -3,7 +3,7 @@ import styled from "styled-components"
 import featuredBackground from "../../images/featured-background.svg"
 
 export const FeaturedElement = styled.section`
-	margin-top: 5rem; /* Header Height */
+	//margin-top: 5rem; /* Header Height */
 
 	background-image: url(${featuredBackground});
 	background-repeat: no-repeat;
