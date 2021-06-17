@@ -10,7 +10,8 @@ export const FeaturedElement = styled.section`
 	background-size: cover;
 	background-position: bottom;
 
-	height: 60vh; /* REMOVE THIS LINE */
+	//height: 60vh; /* REMOVE THIS LINE */
+	padding: 3rem 0 6rem;
 	width: 100%;
 
 	display: flex;
@@ -19,8 +20,11 @@ export const FeaturedElement = styled.section`
 
 	font-size: 0.7rem;
 
-	.circle {
-		font-size: 0.8rem;
+	h1 {
+		.circle {
+			font-size: 0.8rem;
+		}
+		margin-bottom: 0.8rem;
 	}
 
 	.centralLimiter {
@@ -37,7 +41,7 @@ export const FeaturedElement = styled.section`
 		font-size: 4rem;
 		width: 1.4rem;
 
-		margin-top: 2.4rem;
+		margin-top: 3.2rem;
 		height: 16.3rem; // 12rem * 1.5 * 0.9
 		padding: 0 1rem;
 		box-sizing: content-box;
@@ -125,6 +129,32 @@ export const MovieItem = styled.div`
 
 		h2.infoTitle {
 			font-weight: normal;
+		}
+
+		p.categories {
+			margin-top: -1px;
+			margin-bottom: 0.3rem;
+
+			font-size: 0.8rem;
+			font-weight: 200; // extra-light
+		}
+
+		div.rating {
+			margin-top: -5px;
+
+			display: flex;
+			align-items: center;
+
+			* {
+				display: flex;
+				align-items: center;
+			}
+
+			p {
+				font-size: 0.8rem;
+				font-weight: 300; // light
+				margin-left: 10px;
+			}
 		}
 	}
 `

@@ -13,7 +13,7 @@ import { limitText, shuffle } from "../utils/formatters"
 
 import { FeaturedElement, Carousel, MovieItem } from "../styles/components/Featured"
 import { CentralDelimiter } from "../styles/containers"
-import { FaCircle, FaChevronLeft, FaChevronRight } from "react-icons/fa"
+import { FaCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa"
 import { useEffect } from "react"
 
 function Featured(): JSX.Element {
@@ -25,6 +25,8 @@ function Featured(): JSX.Element {
 	useLayoutEffect(() => {
 		setScrollSpeed(MOVIE_ROW.current?.clientWidth || 0)
 	}, [])
+
+	// REMOVE THIS LINE
 	useEffect(() => console.log(featuredMovies))
 
 	const MOVIE_ROW = useRef<HTMLDivElement>(null)
@@ -87,6 +89,12 @@ function Featured(): JSX.Element {
 									<p className="categories pink">
 										{getCategoriesName(movie.genre_ids, 2).join(", ")}
 									</p>
+									<div className="rating">
+										<span className="starIcon pink">
+											<FaStar />
+										</span>
+										<p>{movie.vote_average}</p>
+									</div>
 								</div>
 							</MovieItem>
 						))}
