@@ -7,20 +7,23 @@ import NavMenu from "./NavMenu"
 // Visual
 
 import { HeaderElement, Logo } from "../styles/components/Header"
-import { CentralDelimiter } from "../styles/containers"
+import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
 
 function Header(): JSX.Element {
 	return (
-		<HeaderElement className="/ heading">
-			{/* Set Home Menu Active Position*/}
-			<CentralDelimiter className="centralDelimiter">
-				<Logo to="/">
-					SUNO <b className="pink">MOVIES</b>
-				</Logo>
+		<>
+			<HeaderElement className="/ heading">
+				{/* Set Home Menu Active Position*/}
+				<CentralDelimiter className="centralDelimiter">
+					<Logo to="/">
+						SUNO <b className="pink">MOVIES</b>
+					</Logo>
 
-				<NavMenu />
-			</CentralDelimiter>
-		</HeaderElement>
+					<NavMenu />
+				</CentralDelimiter>
+			</HeaderElement>
+			<GlobalContainerStyle />
+		</>
 	)
 }
 

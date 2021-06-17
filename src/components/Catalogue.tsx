@@ -1,9 +1,11 @@
 import React from "react"
 
+import { categoryList } from "../services/requests"
+
 // Visual
 
-import { CatalogueHeader } from "../styles/components/Catalogue"
-import { CentralDelimiter } from "../styles/containers"
+import { CatalogueHeader, CatalogueElement, Button } from "../styles/components/Catalogue"
+import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
 import { FaCircle } from "react-icons/fa"
 
 function Catalogue(): JSX.Element {
@@ -17,6 +19,27 @@ function Catalogue(): JSX.Element {
 					</h1>
 				</CentralDelimiter>
 			</CatalogueHeader>
+			<CatalogueElement>
+				<CentralDelimiter className="centralDelimiter">
+					<nav className="filters">
+						<div className="leftAlign">
+							<select placeholder="por gênero" defaultValue="placeholder">
+								<option value="placeholder" disabled>
+									por gênero
+								</option>
+								{categoryList.map(category => (
+									<option key={category.id} value={category.id}>
+										{category.name}
+									</option>
+								))}
+							</select>
+
+							<Button clicked={false}>Mais Populares</Button>
+						</div>
+					</nav>
+				</CentralDelimiter>
+			</CatalogueElement>
+			<GlobalContainerStyle />
 		</>
 	)
 }
