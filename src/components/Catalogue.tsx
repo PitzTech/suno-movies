@@ -29,7 +29,7 @@ import { BsGridFill } from "react-icons/bs"
 import { TiThList } from "react-icons/ti"
 
 function Catalogue(): JSX.Element {
-	const [isGrid, setIsGrid] = useState(false)
+	const [isGrid, setIsGrid] = useState(true)
 	const { catalogueMovies } = useContext(MoviesContext)
 
 	// Custom Select Button

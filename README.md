@@ -7,6 +7,7 @@
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-em-desenvolvimento">Em desenvolvimento</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
@@ -48,7 +49,16 @@ Esse projeto foi desenvolvido visando codificar a interface desenvolvida pela eq
 -  **Receber indicações de filmes** (Carrossel com ordem randômica)
 -  **Filtrar por categorias** (Em construção)
 -  **Ver mais informações dos filmes**, em página própria (Em construção)
--  **Buscar por filmes** (Em construição)
+-  **Buscar por filmes** (Em construção)
+
+## 🚧 Em desenvolvimento
+
+-  Seletor Customizado
+-  Indicação baseada em generos mais acessados
+-  Filtrar por categorias
+-  Mudança de layout Grid/Lista
+-  Responsividade
+-  Busca por filmes
 
 ## 👷 Como usar
 
