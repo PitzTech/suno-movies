@@ -24,6 +24,9 @@ export const FeaturedElement = styled.section`
 		.circle {
 			font-size: 0.8rem;
 		}
+
+		font-size: 1.05rem;
+
 		margin-bottom: 0.8rem;
 	}
 

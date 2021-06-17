@@ -11,7 +11,7 @@ import { CentralDelimiter } from "../styles/containers"
 
 function Header(): JSX.Element {
 	return (
-		<HeaderElement className="/">
+		<HeaderElement className="/ heading">
 			{/* Set Home Menu Active Position*/}
 			<CentralDelimiter className="centralDelimiter">
 				<Logo to="/">
