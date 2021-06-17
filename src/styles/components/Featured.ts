@@ -10,7 +10,7 @@ export const FeaturedElement = styled.section`
 	background-size: cover;
 	background-position: bottom;
 
-	height: 70vh; /* REMOVE THIS LINE */
+	height: 60vh; /* REMOVE THIS LINE */
 	width: 100%;
 
 	display: flex;
@@ -56,7 +56,7 @@ export const FeaturedElement = styled.section`
 	}
 
 	.leftArrow {
-		left: -2.5rem;
+		left: -3.4rem;
 	}
 
 	.rightArrow {
@@ -73,39 +73,58 @@ export const Carousel = styled.div`
 
 	div.movieRow-List {
 		white-space: nowrap;
+
 		transition: margin-left ease 0.3s;
 
-		box-sizing: content-box;
+		width: 100%;
+	}
+`
+
+export const MovieItem = styled.div`
+	align-items: center;
+
+	display: inline-block;
+	width: 12rem;
+
+	//margin-left: -30px;
+	margin: 0 0.3rem;
+
+	a {
+		display: block;
+	}
+
+	/* .cover {
+		background-image: url(${featuredBackground});
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: bottom;
+
+		color: transparent;
+		user-select: none;
+	} */
+
+	img {
+		margin: 0 auto;
 
 		width: 100%;
+		transform: scale(0.9);
 
-		.item {
-			align-items: center;
+		user-select: none;
 
-			display: inline-block;
-			width: 12rem;
-
-			//margin-left: -30px;
-			margin: 0 0.3rem;
-
-			img {
-				margin: 0 auto;
-
-				width: 100%;
-				transform: scale(0.9);
-
-				user-select: none;
-
-				transition: transform ease 0.35s;
-				&:hover {
-					transform: scale(1);
-					cursor: pointer;
-				}
-			}
+		transition: transform ease 0.35s;
+		&:hover {
+			transform: scale(1);
+			cursor: pointer;
 		}
+	}
 
-		.item:last-child {
-			margin-right: 0;
+	.info {
+		width: 90%;
+		margin: 0 auto;
+		//white-space: normal;
+
+		h2.infoTitle {
+			font-weight: normal;
 		}
 	}
 `

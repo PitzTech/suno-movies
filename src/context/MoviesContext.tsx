@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect, useCallback } from "react"
 // Services
 
 import conn from "../services/connection"
-import { categoryList, indicator } from "../services/requests"
+import { indicator } from "../services/requests"
 
 // Types
 
