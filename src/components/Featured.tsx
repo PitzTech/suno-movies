@@ -75,8 +75,8 @@ function Featured(): JSX.Element {
 						ref={MOVIE_ROW}
 						style={{ marginLeft: scroll }}
 					>
-						{shuffle(featuredMovies || []).map((movie, key) => (
-							<MovieItem key={key}>
+						{shuffle(featuredMovies || []).map(movie => (
+							<MovieItem key={movie.id}>
 								<Link to={`/filme/${movie.id}`}>
 									{/* {<div className="cover">{movie.title}</div>} */}
 									<img

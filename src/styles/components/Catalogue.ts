@@ -5,6 +5,8 @@ export const CatalogueHeader = styled.div`
 	position: relative;
 	display: flex;
 
+	border-top: 2.5px solid var(--primary-pink);
+
 	.circle {
 		font-size: 0.8rem;
 	}
@@ -121,4 +123,68 @@ export const GridButton = styled.button`
 
 export const CatalogueMovies = styled.div`
 	margin-top: 3rem;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1.5rem;
+`
+
+export const MovieItem = styled.div`
+	display: flex;
+	overflow: hidden;
+
+	img {
+		width: 35%;
+		margin-right: 1rem;
+
+		user-select: none;
+		cursor: pointer;
+	}
+
+	.info {
+		flex: 1;
+		//white-space: normal;
+
+		h2.infoTitle {
+			font-weight: normal;
+			font-size: 1rem;
+		}
+
+		p.categories {
+			margin-top: -1px;
+			margin-bottom: 0.3rem;
+
+			font-size: 0.8rem;
+			font-weight: 200; // extra-light
+		}
+
+		div.rating {
+			margin: 0.3rem 0;
+
+			display: flex;
+			align-items: center;
+
+			font-size: 0.8rem;
+
+			* {
+				display: flex;
+				align-items: center;
+			}
+
+			p {
+				font-size: 0.8rem;
+				font-weight: 300; // light
+				margin-left: 10px;
+				margin-top: 0.07rem;
+			}
+		}
+
+		p.description {
+			font-size: 0.75rem;
+			color: var(--secondary-text);
+
+			text-align: justify;
+			text-align-last: left;
+		}
+	}
 `

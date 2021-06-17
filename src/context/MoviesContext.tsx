@@ -37,7 +37,7 @@ export const MoviesContextProvider: React.FC = ({ children }) => {
 	}, [FetchMovies])
 
 	return (
-		<MoviesContext.Provider value={{ featuredMovies }}>
+		<MoviesContext.Provider value={{ featuredMovies, catalogueMovies }}>
 			{children}
 		</MoviesContext.Provider>
 	)
