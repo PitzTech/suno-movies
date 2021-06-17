@@ -14,6 +14,10 @@ export const indicator = {
 		url: solveParams("/movie/top_rated?"),
 		movies: []
 	}
+	// catalogue: {
+	// 	name: "Filmes em Catálogo",
+	// 	url: solveParams("/discover/movie?page")
+	// }
 }
 
 export const categoryList: MovieRequest[] = [

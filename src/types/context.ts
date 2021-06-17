@@ -6,4 +6,5 @@ export interface MoviesContextProps {
 		id: number
 		name: string
 	}[]
+	catalogueMovies?: Movie[]
 }

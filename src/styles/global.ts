@@ -5,6 +5,8 @@ export default createGlobalStyle`
       --primary-background: #1B1B1F;
       --primary-text: #EAEAEA;
 		--secondary-background: #212125;
+		--secondary-background-light-contrast: #2e2d31;
+		--secondary-background-contrast: #2e2e35;
 		--primary-pink: #FF559E;
    }
 

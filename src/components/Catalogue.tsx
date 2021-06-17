@@ -1,17 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { categoryList } from "../services/requests"
 
 // Visual
 
-import { CatalogueHeader, CatalogueElement, Button } from "../styles/components/Catalogue"
+import {
+	CatalogueHeader,
+	CatalogueElement,
+	Button,
+	GridButton,
+	CatalogueMovies
+} from "../styles/components/Catalogue"
 import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
-import { FaCircle } from "react-icons/fa"
+import { FaCircle, FaChevronDown } from "react-icons/fa"
+import { BsGridFill } from "react-icons/bs"
 
 function Catalogue(): JSX.Element {
+	const [isGrid, setIsGrid] = useState(false)
+
+	const getCatalogueMovies = (): string => {
+		return ""
+	}
+
 	return (
 		<>
-			<CatalogueHeader className="heading">
+			<CatalogueHeader className="heading" id="catalogue">
 				<CentralDelimiter className="centralDelimiter">
 					<h1>
 						<FaCircle className="pink circle" />
@@ -25,7 +38,7 @@ function Catalogue(): JSX.Element {
 						<div className="leftAlign">
 							<select placeholder="por gênero" defaultValue="placeholder">
 								<option value="placeholder" disabled>
-									por gênero
+									▼ por gênero
 								</option>
 								{categoryList.map(category => (
 									<option key={category.id} value={category.id}>
@@ -36,7 +49,20 @@ function Catalogue(): JSX.Element {
 
 							<Button clicked={false}>Mais Populares</Button>
 						</div>
+						<GridButton onClick={() => setIsGrid(!isGrid)}>
+							{isGrid ? (
+								<>
+									<BsGridFill className="icon" /> Grid
+								</>
+							) : (
+								<>
+									<FaChevronDown className="icon" /> Lista
+								</>
+							)}
+						</GridButton>
 					</nav>
+
+					<CatalogueMovies>{getCatalogueMovies()}</CatalogueMovies>
 				</CentralDelimiter>
 			</CatalogueElement>
 			<GlobalContainerStyle />

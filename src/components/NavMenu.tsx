@@ -12,7 +12,7 @@ function NavMenu(): JSX.Element {
 				<ScrollLink activeClass="on" to="/" smooth={true} spy={true}>
 					INÍCIO
 				</ScrollLink>
-				<ScrollLink activeClass="on" to="catalog" smooth={true} spy={true}>
+				<ScrollLink activeClass="on" to="catalogue" smooth={true} spy={true}>
 					CATÁLOGO
 				</ScrollLink>
 			</div>

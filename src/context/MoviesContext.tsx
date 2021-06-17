@@ -1,5 +1,9 @@
 import React, { createContext, useState, useEffect, useCallback } from "react"
 
+// Utils
+
+import { solveParams } from "../utils/requestSolver"
+
 // Services
 
 import conn from "../services/connection"
@@ -14,16 +18,20 @@ const MoviesContext = createContext<MoviesContextProps>({})
 
 export const MoviesContextProvider: React.FC = ({ children }) => {
 	const [featuredMovies, setFeaturedMovies] = useState<Movie[]>([])
+	const [catalogueMovies, setCatalogueMovies] = useState<Movie[]>([])
+	const [cataloguePage, setCataloguePage] = useState(1)
 
-	const FetchFeaturedMovies = useCallback(() => {
+	const FetchMovies = useCallback(() => {
+		// Featured
 		conn.get(indicator.trending.url).then(response => {
 			setFeaturedMovies(response.data.results)
 		})
+		// Catalogue
+		conn.get(solveParams(`/discover/movie?page=${cataloguePage}`)).then(response => {})
 	}, [])
 
 	useEffect(() => {
-		FetchFeaturedMovies()
-		console.log(featuredMovies)
+		FetchMovies()
 	}, [FetchFeaturedMovies])
 
 	return (
