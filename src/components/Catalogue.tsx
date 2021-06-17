@@ -26,10 +26,13 @@ import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
 
 import { FaCircle, FaChevronDown, FaStar } from "react-icons/fa"
 import { BsGridFill } from "react-icons/bs"
+import { TiThList } from "react-icons/ti"
 
 function Catalogue(): JSX.Element {
 	const [isGrid, setIsGrid] = useState(false)
 	const { catalogueMovies } = useContext(MoviesContext)
+
+	// Custom Select Button
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	const getCatalogueMovies = () => {
@@ -92,7 +95,7 @@ function Catalogue(): JSX.Element {
 								</>
 							) : (
 								<>
-									<FaChevronDown className="icon" /> Lista
+									<TiThList className="icon" /> Lista
 								</>
 							)}
 						</GridButton>
