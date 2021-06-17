@@ -27,12 +27,14 @@ export const MoviesContextProvider: React.FC = ({ children }) => {
 			setFeaturedMovies(response.data.results)
 		})
 		// Catalogue
-		conn.get(solveParams(`/discover/movie?page=${cataloguePage}`)).then(response => {})
+		conn.get(solveParams(`/discover/movie?page=${cataloguePage}`)).then(response => {
+			setCatalogueMovies(response.data.results)
+		})
 	}, [])
 
 	useEffect(() => {
 		FetchMovies()
-	}, [FetchFeaturedMovies])
+	}, [FetchMovies])
 
 	return (
 		<MoviesContext.Provider value={{ featuredMovies }}>

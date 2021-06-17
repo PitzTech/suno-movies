@@ -45,10 +45,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Esse projeto foi desenvolvido visando codificar a interface desenvolvida pela equipe de UI/UX. Criando assim, uma plataforma de filmes, onde é possivel:
 
--  Receber indicações de filmes
--  Filtrar por categorias (Em construção)
--  Ver mais informações dos filmes, em página própria (Em construção)
--  Buscar por filmes (Em construição)
+-  <b>Receber indicações de filmes</b>(Carrossel com ordem randômica)
+-  <b>Filtrar por categorias</b> (Em construção)
+-  <b>Ver mais informações dos filmes, em página própria</b> (Em construção)
+-  <b>Buscar por filmes</b> (Em construição)
 
 ## 👷 Como usar
 
