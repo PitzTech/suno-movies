@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const MovieItem = styled.div`
+export const MovieItem = styled.section`
 	display: flex;
 	overflow: hidden;
 
@@ -68,3 +68,5 @@ export const MovieItem = styled.div`
 		}
 	}
 `
+
+export const MovieTrailer = styled.section``

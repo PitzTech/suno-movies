@@ -13,6 +13,21 @@ export default createGlobalStyle`
 		--primary-pink: #FF559E;
    }
 
+	::-webkit-scrollbar {
+		width: .3rem;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--primary-background);
+		-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.1);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--primary-pink);
+		outline: 1px solid slategrey;
+		height: 1rem;
+	}
+
    * {
       margin: 0;
       padding: 0;

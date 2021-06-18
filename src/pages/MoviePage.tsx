@@ -14,7 +14,7 @@ import Header from "../components/Header"
 
 // Visual
 
-import { MovieItem } from "../styles/sections/MoviePage"
+import { MovieItem, MovieTrailer } from "../styles/sections/MoviePage"
 import { CentralDelimiter, BackgroundContainer } from "../styles/containers"
 
 import { FaStar } from "react-icons/fa"
@@ -71,6 +71,7 @@ function MoviePage(): JSX.Element {
 							</div>
 						</div>
 					</MovieItem>
+					<MovieTrailer></MovieTrailer>
 				</CentralDelimiter>
 			</BackgroundContainer>
 		</>
