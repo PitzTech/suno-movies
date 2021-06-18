@@ -27,7 +27,7 @@ function Featured(): JSX.Element {
 	}, [])
 
 	// REMOVE THIS LINE
-	useEffect(() => console.log(featuredMovies))
+	//useEffect(() => console.log(featuredMovies))
 
 	const MOVIE_ROW = useRef<HTMLDivElement>(null)
 	const MOVIE_SIZE = 192

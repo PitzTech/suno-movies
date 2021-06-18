@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Link } from "react-scroll"
 
 export const NavElement = styled.nav`
 	display: flex;
@@ -26,23 +25,23 @@ export const NavElement = styled.nav`
 			color: var(--primary-pink);
 		}
 	}
-`
 
-export const ScrollLink = styled(Link)`
-	font-size: 0.9rem;
+	.headerLink {
+		font-size: 0.9rem;
 
-	display: flex;
-	align-items: center;
-	padding: 0 1.5rem;
+		display: flex;
+		align-items: center;
+		padding: 0 1.5rem;
 
-	cursor: pointer;
+		cursor: pointer;
 
-	transition: color ease 0.45s, border-color ease 0.3s;
-	border-bottom: 3px solid transparent;
+		transition: color ease 0.45s, border-color ease 0.3s;
+		border-bottom: 3px solid transparent;
 
-	&.on,
-	&:hover {
-		color: var(--primary-pink);
-		border-color: var(--primary-pink);
+		&.on,
+		&:hover {
+			color: var(--primary-pink);
+			border-color: var(--primary-pink);
+		}
 	}
 `

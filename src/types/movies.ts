@@ -14,3 +14,9 @@ export interface Movie {
 	number_of_seasons?: number
 	first_air_date?: string
 }
+
+export interface MovieTrailer {
+	id: string
+	key: string
+	title: string
+}
