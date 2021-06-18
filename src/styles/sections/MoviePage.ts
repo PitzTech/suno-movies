@@ -5,7 +5,7 @@ export const MovieItem = styled.div`
 	overflow: hidden;
 
 	img {
-		width: 35%;
+		width: 30%;
 		margin-right: 2.5rem;
 
 		user-select: none;
@@ -16,45 +16,59 @@ export const MovieItem = styled.div`
 		flex: 1;
 		white-space: normal;
 
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+
 		h1.infoTitle {
 			font-weight: bolder;
 			font-size: 2.5rem;
 		}
 
-		p.categories {
-			margin-bottom: 0.3rem;
-
-			font-size: 1.2rem;
-			font-weight: 200; // light
-		}
-
-		div.rating {
-			margin: 0.3rem 0;
-
+		.categories-rating-group {
 			display: flex;
-			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 1rem;
 
-			font-size: 0.8rem;
+			p.categories {
+				font-size: 1.2rem;
+				font-weight: 200; // light
+			}
 
-			* {
+			div.rating {
 				display: flex;
 				align-items: center;
+
+				margin-top: -0.2rem;
+
+				font-size: 1.2rem;
+
+				* {
+					display: flex;
+					align-items: center;
+				}
+
+				p {
+					font-size: 1.2rem;
+					font-weight: 300; // light
+					margin-left: 10px;
+					margin-top: 0.07rem;
+				}
+			}
+		}
+
+		.description {
+			h2 {
+				margin-bottom: 1rem;
 			}
 
 			p {
-				font-size: 0.8rem;
-				font-weight: 300; // light
-				margin-left: 10px;
-				margin-top: 0.07rem;
+				font-size: 0.9rem;
+				color: var(--secondary-text);
+
+				text-align: justify;
+				text-align-last: left;
 			}
-		}
-
-		p.description {
-			font-size: 0.75rem;
-			color: var(--secondary-text);
-
-			text-align: justify;
-			text-align-last: left;
 		}
 	}
 `
