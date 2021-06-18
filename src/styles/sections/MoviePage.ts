@@ -6,7 +6,7 @@ export const MovieItem = styled.div`
 
 	img {
 		width: 35%;
-		margin-right: 1rem;
+		margin-right: 2.5rem;
 
 		user-select: none;
 		cursor: pointer;
@@ -14,19 +14,18 @@ export const MovieItem = styled.div`
 
 	.info {
 		flex: 1;
-		//white-space: normal;
+		white-space: normal;
 
-		h2.infoTitle {
-			font-weight: normal;
-			font-size: 1rem;
+		h1.infoTitle {
+			font-weight: bolder;
+			font-size: 2.5rem;
 		}
 
 		p.categories {
-			margin-top: -1px;
 			margin-bottom: 0.3rem;
 
-			font-size: 0.8rem;
-			font-weight: 200; // extra-light
+			font-size: 1.2rem;
+			font-weight: 200; // light
 		}
 
 		div.rating {

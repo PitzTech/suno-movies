@@ -55,7 +55,7 @@ function MoviePage(): JSX.Element {
 						/>
 
 						<div className="info">
-							<h2 className="infoTitle">{movie?.title}</h2>
+							<h1 className="infoTitle">{movie?.title}</h1>
 							<p className="categories pink">{categories.join(", ")}</p>
 							<div className="rating">
 								<span className="starIcon pink">
