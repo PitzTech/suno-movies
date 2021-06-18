@@ -7,8 +7,6 @@ import { Movie } from "../types/movies"
 // Utils
 
 import { solvePosterUrl, solveParams } from "../utils/requestSolver"
-import { limitText } from "../utils/formatters"
-import { getCategoriesName } from "../utils/movieInfo"
 
 // Components
 
@@ -17,7 +15,7 @@ import Header from "../components/Header"
 // Visual
 
 import { MovieItem } from "../styles/sections/MoviePage"
-import { CentralDelimiter } from "../styles/containers"
+import { CentralDelimiter, BackgroundContainer } from "../styles/containers"
 
 import { FaStar } from "react-icons/fa"
 
@@ -47,7 +45,7 @@ function MoviePage(): JSX.Element {
 	return (
 		<>
 			<Header />
-			<section>
+			<BackgroundContainer>
 				<CentralDelimiter>
 					<MovieItem>
 						{/* {<div className="cover">{movie.title}</div>} */}
@@ -57,7 +55,7 @@ function MoviePage(): JSX.Element {
 						/>
 
 						<div className="info">
-							<h2 className="infoTitle">{limitText(movie?.title || "", 25)}</h2>
+							<h2 className="infoTitle">{movie?.title}</h2>
 							<p className="categories pink">{categories.join(", ")}</p>
 							<div className="rating">
 								<span className="starIcon pink">
@@ -65,13 +63,11 @@ function MoviePage(): JSX.Element {
 								</span>
 								<p>{movie?.vote_average}</p>
 							</div>
-							<p className="description">
-								{limitText(movie?.overview || "", 180)}
-							</p>
+							<p className="description">{movie?.overview}</p>
 						</div>
 					</MovieItem>
 				</CentralDelimiter>
-			</section>
+			</BackgroundContainer>
 		</>
 	)
 }

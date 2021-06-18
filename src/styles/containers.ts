@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components"
+import featuredBackground from "../images/featured-background.svg"
 
 export const CentralDelimiter = styled.div`
 	width: 800px;
@@ -28,5 +29,74 @@ export default createGlobalStyle`
 
 			height: 100%;
 		}
+	}
+`
+
+export const BackgroundContainer = styled.section`
+	//margin-top: 5rem; /* Header Height */
+
+	background-image: url(${featuredBackground});
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+
+	//height: 60vh; /* REMOVE THIS LINE */
+	padding: 3rem 0 6rem;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	font-size: 0.7rem;
+
+	h1 {
+		.circle {
+			font-size: 0.8rem;
+		}
+
+		font-size: 1.05rem;
+
+		margin-bottom: 0.8rem;
+	}
+
+	.centralLimiter {
+		box-sizing: content-box;
+		width: 820px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.leftArrow,
+	.rightArrow {
+		position: absolute;
+
+		font-size: 4rem;
+		width: 1.4rem;
+
+		margin-top: 3.2rem;
+		height: 16.3rem; // 12rem * 1.5 * 0.9
+		padding: 0 1rem;
+		box-sizing: content-box;
+
+		cursor: pointer;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		transition: background-color ease 0.5s;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.75);
+		}
+	}
+
+	.leftArrow {
+		left: -3.4rem;
+	}
+
+	.rightArrow {
+		right: -2.5rem;
 	}
 `

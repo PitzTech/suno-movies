@@ -11,8 +11,8 @@ import { limitText, shuffle } from "../utils/formatters"
 
 // Visual
 
-import { FeaturedElement, Carousel, MovieItem } from "../styles/sections/Featured"
-import { CentralDelimiter } from "../styles/containers"
+import { Carousel, MovieItem } from "../styles/sections/Featured"
+import { CentralDelimiter, BackgroundContainer } from "../styles/containers"
 import { FaCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa"
 import { useEffect } from "react"
 
@@ -57,7 +57,7 @@ function Featured(): JSX.Element {
 	}
 
 	return (
-		<FeaturedElement>
+		<BackgroundContainer>
 			<CentralDelimiter className="centralLimiter">
 				<h1>
 					<FaCircle className="pink circle" />
@@ -101,7 +101,7 @@ function Featured(): JSX.Element {
 					</div>
 				</Carousel>
 			</CentralDelimiter>
-		</FeaturedElement>
+		</BackgroundContainer>
 	)
 }
 
