@@ -55,16 +55,14 @@ function MoviePage(): JSX.Element {
 						/>
 
 						<div className="info">
-							<div>
-								<h1 className="infoTitle">{movie?.title}</h1>
-								<div className="categories-rating-group">
-									<p className="categories pink">{categories.join(", ")}</p>
-									<div className="rating">
-										<span className="starIcon pink">
-											<FaStar />
-										</span>
-										<p>{movie?.vote_average}</p>
-									</div>
+							<h1 className="infoTitle">{movie?.title}</h1>
+							<div className="categories-rating-group">
+								<p className="categories pink">{categories.join(", ")}</p>
+								<div className="rating">
+									<span className="starIcon pink">
+										<FaStar />
+									</span>
+									<p>{movie?.vote_average}</p>
 								</div>
 							</div>
 							<div className="description">

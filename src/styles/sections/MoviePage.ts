@@ -16,10 +16,6 @@ export const MovieItem = styled.div`
 		flex: 1;
 		white-space: normal;
 
-		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-
 		h1.infoTitle {
 			font-weight: bolder;
 			font-size: 2.5rem;
@@ -28,7 +24,7 @@ export const MovieItem = styled.div`
 		.categories-rating-group {
 			display: flex;
 			justify-content: space-between;
-			margin-bottom: 1rem;
+			margin-bottom: 1.7rem;
 
 			p.categories {
 				font-size: 1.2rem;
