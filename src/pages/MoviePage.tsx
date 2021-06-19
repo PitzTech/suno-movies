@@ -86,6 +86,7 @@ function MoviePage(): JSX.Element {
 					<h1>Trailer</h1>
 					<div className="iframe">
 						<iframe
+							loading="lazy"
 							src={
 								TRAILER_BASE_URL +
 								(movieTrailer.length ? movieTrailer[0].key : "")
