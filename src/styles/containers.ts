@@ -34,6 +34,19 @@ export default createGlobalStyle`
 			height: 100%;
 		}
 	}
+
+	@media (max-width: 943px) {
+		.heading h1 {
+			text-align: center;
+			font-size: 1.2rem;
+
+			.circle {
+				font-size: 1rem;
+				margin-right: 10px;
+				margin-bottom: -0.05rem;
+			}
+		}
+	}
 `
 
 export const BackgroundContainer = styled.section`
@@ -105,6 +118,17 @@ export const BackgroundContainer = styled.section`
 
 	@media (max-width: 943px) {
 		background-image: none;
+
+		h1 {
+			text-align: center;
+			font-size: 1.2rem;
+
+			.circle {
+				font-size: 1rem;
+				margin-right: 10px;
+				margin-bottom: -0.05rem;
+			}
+		}
 
 		.centralLimiter {
 			box-sizing: content-box;

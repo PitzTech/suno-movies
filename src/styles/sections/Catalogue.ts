@@ -62,6 +62,21 @@ export const CatalogueElement = styled.section`
 			font-size: 1rem;
 		}
 	}
+
+	@media (max-width: 943px) {
+		.leftAlign {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+
+			& > * {
+				font-size: 1em;
+			}
+		}
+		select {
+			height: 2.5rem;
+		}
+	}
 `
 
 interface ButtonProps {
@@ -98,6 +113,10 @@ export const Button = styled.button<ButtonProps>`
 		border: 2px solid var(--primary-pink);
 		background: transparent;
 	}
+
+	@media (max-width: 943px) {
+		height: 2.5rem;
+	}
 `
 
 export const GridButton = styled.button`
@@ -119,6 +138,10 @@ export const GridButton = styled.button`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media (max-width: 943px) {
+		display: none;
+	}
 `
 
 export const CatalogueMovies = styled.div`
