@@ -167,7 +167,8 @@ export const MovieItem = styled.div<IsGridProps>`
 	overflow: hidden;
 
 	img {
-		width: ${props => (props.isGrid ? `35%` : `23%`)};
+		width: ${props => (props.isGrid ? `35%` : `11rem`)};
+
 		margin-right: ${props => (props.isGrid ? `1rem` : `1.5rem`)};
 
 		user-select: none;
