@@ -79,4 +79,11 @@ export const MovieItem = styled.div`
 			}
 		}
 	}
+
+	@media (max-width: 1080px) {
+		width: 12.55rem;
+	}
+	@media (max-width: 943px) {
+		width: 15.5rem;
+	}
 `

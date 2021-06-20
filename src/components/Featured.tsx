@@ -14,7 +14,6 @@ import { limitText, shuffle } from "../utils/formatters"
 import { Carousel, MovieItem } from "../styles/sections/Featured"
 import { CentralDelimiter, BackgroundContainer } from "../styles/containers"
 import { FaCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa"
-import { useEffect } from "react"
 
 function Featured(): JSX.Element {
 	const { featuredMovies } = useContext(MoviesContext)

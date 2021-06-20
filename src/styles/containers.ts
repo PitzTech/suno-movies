@@ -2,10 +2,14 @@ import styled, { createGlobalStyle } from "styled-components"
 import featuredBackground from "../images/featured-background.svg"
 
 export const CentralDelimiter = styled.div`
-	width: 800px;
+	max-width: 820px;
 
 	position: relative;
 	margin: 0 auto;
+
+	@media (max-width: 943px) {
+		max-width: 90%;
+	}
 `
 
 export default createGlobalStyle`
@@ -62,7 +66,6 @@ export const BackgroundContainer = styled.section`
 
 	.centralLimiter {
 		box-sizing: content-box;
-		width: 820px;
 		display: flex;
 		flex-direction: column;
 	}
@@ -98,5 +101,13 @@ export const BackgroundContainer = styled.section`
 
 	.rightArrow {
 		right: -2.5rem;
+	}
+
+	@media (max-width: 943px) {
+		background-image: none;
+
+		.centralLimiter {
+			box-sizing: content-box;
+		}
 	}
 `
