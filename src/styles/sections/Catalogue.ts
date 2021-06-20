@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { shade } from "polished"
 
 export const CatalogueHeader = styled.div`
@@ -141,25 +141,34 @@ export const GridButton = styled.button`
 	align-items: center;
 `
 
-interface CatalogueMoviesProps {
+interface IsGridProps {
 	isGrid: boolean
 }
 
-export const CatalogueMovies = styled.div<CatalogueMoviesProps>`
+export const CatalogueMovies = styled.div<IsGridProps>`
 	margin-top: 3rem;
 
 	display: grid;
 	grid-template-columns: ${props => (props.isGrid ? `1fr 1fr` : `1fr`)};
-	grid-gap: 1.5rem;
+	grid-gap: ${props => (props.isGrid ? `1.5rem` : `2rem`)};
+
+	// If is list
+	${props =>
+		!props.isGrid &&
+		css`
+			& * {
+				max-height: 16rem;
+			}
+		`}
 `
 
-export const MovieItem = styled.div`
+export const MovieItem = styled.div<IsGridProps>`
 	display: flex;
 	overflow: hidden;
 
 	img {
-		width: 35%;
-		margin-right: 1rem;
+		width: ${props => (props.isGrid ? `35%` : `23%`)};
+		margin-right: ${props => (props.isGrid ? `1rem` : `1.5rem`)};
 
 		user-select: none;
 		cursor: pointer;
@@ -171,14 +180,14 @@ export const MovieItem = styled.div`
 
 		h2.infoTitle {
 			font-weight: normal;
-			font-size: 1rem;
+			font-size: ${props => (props.isGrid ? `1rem` : `1.4rem`)};
 		}
 
 		p.categories {
-			margin-top: -1px;
+			margin-top: ${props => (props.isGrid ? `-1px` : `10px`)}-1px;
 			margin-bottom: 0.3rem;
 
-			font-size: 0.8rem;
+			font-size: ${props => (props.isGrid ? `0.8rem` : `1rem`)};
 			font-weight: 200; // extra-light
 		}
 
@@ -188,7 +197,7 @@ export const MovieItem = styled.div`
 			display: flex;
 			align-items: center;
 
-			font-size: 0.8rem;
+			font-size: ${props => (props.isGrid ? `0.8rem` : `1rem`)};
 
 			* {
 				display: flex;
@@ -196,7 +205,7 @@ export const MovieItem = styled.div`
 			}
 
 			p {
-				font-size: 0.8rem;
+				font-size: ${props => (props.isGrid ? `0.8rem` : `1rem`)};
 				font-weight: 300; // light
 				margin-left: 10px;
 				margin-top: 0.07rem;
@@ -204,7 +213,7 @@ export const MovieItem = styled.div`
 		}
 
 		p.description {
-			font-size: 0.75rem;
+			font-size: ${props => (props.isGrid ? `0.75rem` : `0.95rem`)};
 			color: var(--secondary-text);
 
 			text-align: justify;
