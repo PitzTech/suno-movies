@@ -11,6 +11,7 @@ import { categoryList } from "../services/requests"
 import { shuffle, limitText } from "../utils/formatters"
 import { solvePosterUrl } from "../utils/requestSolver"
 import { getCategoriesName } from "../utils/movieInfo"
+import useViewport from "../utils/useViewport"
 
 // Visual
 
@@ -27,10 +28,16 @@ import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
 import { FaCircle, FaStar } from "react-icons/fa"
 import { BsGridFill } from "react-icons/bs"
 import { TiThList } from "react-icons/ti"
+import { useEffect } from "react"
 
 function Catalogue(): JSX.Element {
 	const [isGrid, setIsGrid] = useState(true)
 	const { catalogueMovies } = useContext(MoviesContext)
+	const { screenWidth, mobileBreakPoint } = useViewport()
+
+	useEffect(() => {
+		if (screenWidth < mobileBreakPoint) setIsGrid(false)
+	}, [])
 
 	// Custom Select Button
 
@@ -86,22 +93,24 @@ function Catalogue(): JSX.Element {
 								))}
 							</select>
 
-							<Button clicked={false}>Mais Populares</Button>
+							<Button isClicked={false}>Mais Populares</Button>
 						</div>
-						<GridButton onClick={() => setIsGrid(!isGrid)}>
-							{isGrid ? (
-								<>
-									<BsGridFill className="icon" /> Grid
-								</>
-							) : (
-								<>
-									<TiThList className="icon" /> Lista
-								</>
-							)}
-						</GridButton>
+						{screenWidth > mobileBreakPoint && (
+							<GridButton onClick={() => setIsGrid(!isGrid)}>
+								{isGrid ? (
+									<>
+										<BsGridFill className="icon" /> Grid
+									</>
+								) : (
+									<>
+										<TiThList className="icon" /> Lista
+									</>
+								)}
+							</GridButton>
+						)}
 					</nav>
 
-					<CatalogueMovies>{getCatalogueMovies()}</CatalogueMovies>
+					<CatalogueMovies isGrid={isGrid}>{getCatalogueMovies()}</CatalogueMovies>
 				</CentralDelimiter>
 			</CatalogueElement>
 			<GlobalContainerStyle />

@@ -80,14 +80,15 @@ export const CatalogueElement = styled.section`
 `
 
 interface ButtonProps {
-	clicked: boolean
+	isClicked: boolean
 }
 
 export const Button = styled.button<ButtonProps>`
 	border: 1px solid var(--primary-pink);
 	padding: 0.5rem 0.5rem;
 
-	background-color: var(--primary-pink);
+	background-color: ${props =>
+		props.isClicked ? `transparent` : `var(--primary-pink)`};
 	box-shadow: 0px 0px 10px ${shade(0.2, "#FF559E")};
 	border-color: transparent;
 
@@ -138,17 +139,17 @@ export const GridButton = styled.button`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-	@media (max-width: 943px) {
-		display: none;
-	}
 `
 
-export const CatalogueMovies = styled.div`
+interface CatalogueMoviesProps {
+	isGrid: boolean
+}
+
+export const CatalogueMovies = styled.div<CatalogueMoviesProps>`
 	margin-top: 3rem;
 
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: ${props => (props.isGrid ? `1fr 1fr` : `1fr`)};
 	grid-gap: 1.5rem;
 `
 

@@ -116,6 +116,13 @@ export const BackgroundContainer = styled.section`
 		right: -2.5rem;
 	}
 
+	@media (max-width: 1080px) {
+		.leftArrow,
+		.rightArrow {
+			margin-top: 3.38rem;
+			height: 16.9425rem; // 12.55rem * 1.5 * 0.9
+		}
+	}
 	@media (max-width: 943px) {
 		background-image: none;
 
@@ -132,6 +139,12 @@ export const BackgroundContainer = styled.section`
 
 		.centralLimiter {
 			box-sizing: content-box;
+		}
+
+		.leftArrow,
+		.rightArrow {
+			margin-top: 3.7rem;
+			height: 20.925rem; // 15.5rem * 1.5 * 0.9
 		}
 	}
 `
