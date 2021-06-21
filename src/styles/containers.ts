@@ -14,8 +14,6 @@ export const CentralDelimiter = styled.div`
 
 export default createGlobalStyle`
 	.heading {
-		z-index: 999;
-
 		width: 100%;
 		height: 5rem;
 
