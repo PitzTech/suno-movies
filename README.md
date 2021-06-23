@@ -48,7 +48,7 @@ Esse projeto visa codificar a interface desenvolvida pela equipe de UI/UX. Crian
 
 -  **Receber indicações de filmes** (Carrossel com ordem randômica)
 -  **Filtrar por categorias** (Em construção)
--  **Ver mais informações dos filmes**, em página própria (Em construção)
+-  **Ver mais informações dos filmes**, em página própria
 -  **Buscar por filmes** (Em construção)
 
 ## 🚧 Em desenvolvimento
@@ -58,7 +58,6 @@ Esse projeto encontra-se em desenvolvimento, sendo previsto a criação dos segu
 -  Seletor Customizado
 -  Indicação baseada nos gêneros mais acessados
 -  Filtrar por categorias
--  Mudança de layout Grid/Lista
 -  Responsividade
 -  Busca por filmes
 
