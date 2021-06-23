@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const NavElement = styled.nav`
 	display: flex;
+	z-index: 999;
 	height: 100%;
 
 	& * {

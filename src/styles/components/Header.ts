@@ -14,6 +14,7 @@ export const HeaderElement = styled.header`
 `
 
 export const Logo = styled(Link)`
+	z-index: 999;
 	font-size: 1.2rem;
 	cursor: pointer;
 `
