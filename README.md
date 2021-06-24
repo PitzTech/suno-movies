@@ -47,9 +47,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Esse projeto visa codificar a interface desenvolvida pela equipe de UI/UX. Criando assim, uma plataforma de filmes, onde é possivel:
 
 -  **Receber indicações de filmes** (Carrossel com ordem randômica)
--  **Filtrar por categorias** (Em construção)
+-  **Filtrar por categorias**
 -  **Ver mais informações dos filmes**, em página própria
--  **Buscar por filmes** (Em construção)
+-  **Buscar por filmes**
 
 ## 🚧 Em desenvolvimento
 
@@ -57,9 +57,6 @@ Esse projeto encontra-se em desenvolvimento, sendo previsto a criação dos segu
 
 -  Seletor Customizado
 -  Indicação baseada nos gêneros mais acessados
--  Filtrar por categorias
--  Responsividade
--  Busca por filmes
 
 ## 👷 Como usar
 

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import MoviesContext from "../context/MoviesContext"
 
@@ -8,7 +8,7 @@ import { categoryList } from "../services/requests"
 
 // Utils
 
-import { shuffle, limitText } from "../utils/formatters"
+import { shuffle, limitText, convertToArray } from "../utils/formatters"
 import { solvePosterUrl } from "../utils/requestSolver"
 import { getCategoriesName } from "../utils/movieInfo"
 import useViewport from "../utils/useViewport"
@@ -28,22 +28,51 @@ import GlobalContainerStyle, { CentralDelimiter } from "../styles/containers"
 import { FaCircle, FaStar } from "react-icons/fa"
 import { BsGridFill } from "react-icons/bs"
 import { TiThList } from "react-icons/ti"
-import { useEffect } from "react"
 
 function Catalogue(): JSX.Element {
 	const [isGrid, setIsGrid] = useState(true)
 	const { catalogueMovies } = useContext(MoviesContext)
 	const { screenWidth, mobileBreakPoint } = useViewport()
 
+	const [filteredCategory, setFilteredCategory] = useState<number>(0)
+	const [isFilterActive, setIsFilterActive] = useState(false)
+	const [isOrderingPopular, setIsOrderingPopular] = useState(false)
+
 	useEffect(() => {
 		if (screenWidth < mobileBreakPoint) setIsGrid(false)
 	}, [])
 
+	function handleFilterCategory(category: string): void {
+		if (category == "all") return setIsFilterActive(false)
+
+		setIsFilterActive(true)
+		setFilteredCategory(Number(category))
+	}
+
+	function handleOrderPopular(): void {
+		setIsOrderingPopular(!isOrderingPopular)
+	}
+
 	// Custom Select Button
 
 	function getCatalogueMovies(): JSX.Element[] {
-		const shuffledMovies = shuffle(catalogueMovies || [])
-		return shuffledMovies.map(
+		let moviesList = catalogueMovies || []
+
+		if (isFilterActive) {
+			moviesList = moviesList.filter(movie => {
+				return movie.genre_ids.includes(filteredCategory)
+			})
+		}
+		if (isOrderingPopular) {
+			moviesList = moviesList.sort((fisrt, second) => {
+				return second.vote_average - fisrt.vote_average
+			})
+		} else {
+			// shuffle
+			moviesList = shuffle(moviesList)
+		}
+
+		return convertToArray(moviesList).map(
 			movie =>
 				movie.poster_path && (
 					<Link to={`/filme/${movie.id}`} key={movie.id}>
@@ -91,10 +120,15 @@ function Catalogue(): JSX.Element {
 				<CentralDelimiter className="centralDelimiter">
 					<nav className="filters">
 						<div className="leftAlign">
-							<select placeholder="por gênero" defaultValue="placeholder">
+							<select
+								onChange={el => handleFilterCategory(el.target.value)}
+								placeholder="por gênero"
+								defaultValue="placeholder"
+							>
 								<option value="placeholder" disabled>
 									▼ por gênero
 								</option>
+								<option value="all">Todos</option>
 								{categoryList.map(category => (
 									<option key={category.id} value={category.id}>
 										{category.name}
@@ -102,7 +136,9 @@ function Catalogue(): JSX.Element {
 								))}
 							</select>
 
-							<Button isClicked={false}>Mais Populares</Button>
+							<Button onClick={handleOrderPopular} isClicked={isOrderingPopular}>
+								Mais Populares
+							</Button>
 						</div>
 						{screenWidth > mobileBreakPoint && (
 							<GridButton onClick={() => setIsGrid(!isGrid)}>

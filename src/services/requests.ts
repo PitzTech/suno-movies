@@ -58,16 +58,6 @@ export const categoryList: MovieRequest[] = [
 		url: solveParams("/discover/movie?with_genres=35")
 	},
 	{
-		id: 36,
-		name: "História",
-		url: solveParams("/discover/movie?with_genres=36")
-	},
-	{
-		id: 37,
-		name: "Faroeste",
-		url: solveParams("/discover/movie?with_genres=37")
-	},
-	{
 		id: 53,
 		name: "Thriller",
 		url: solveParams("/discover/movie?with_genres=53")
@@ -76,11 +66,6 @@ export const categoryList: MovieRequest[] = [
 		id: 80,
 		name: "Crime",
 		url: solveParams("/discover/movie?with_genres=80")
-	},
-	{
-		id: 99,
-		name: "Documentários",
-		url: solveParams("/discover/movie?with_genres=99")
 	},
 	{
 		id: 878,
@@ -93,16 +78,6 @@ export const categoryList: MovieRequest[] = [
 		url: solveParams("/discover/movie?with_genres=9648")
 	},
 	{
-		id: 10402,
-		name: "Música",
-		url: solveParams("/discover/movie?with_genres=10402")
-	},
-	{
-		id: 10749,
-		name: "Romance",
-		url: solveParams("/discover/movie?with_genres=10749")
-	},
-	{
 		id: 10751,
 		name: "Família",
 		url: solveParams("/discover/movie?with_genres=10751")
@@ -111,10 +86,5 @@ export const categoryList: MovieRequest[] = [
 		id: 10752,
 		name: "Guerra",
 		url: solveParams("/discover/movie?with_genres=10752")
-	},
-	{
-		id: 10770,
-		name: "Cinema TV",
-		url: solveParams("/discover/movie?with_genres=10770")
 	}
 ]

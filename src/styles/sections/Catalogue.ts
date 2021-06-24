@@ -84,13 +84,13 @@ interface ButtonProps {
 }
 
 export const Button = styled.button<ButtonProps>`
-	border: 1px solid var(--primary-pink);
-	padding: 0.5rem 0.5rem;
-
 	background-color: ${props =>
 		props.isClicked ? `transparent` : `var(--primary-pink)`};
 	box-shadow: 0px 0px 10px ${shade(0.2, "#FF559E")};
-	border-color: transparent;
+	border-width: ${props => (props.isClicked ? `2px` : `1px`)};
+	border-style: solid;
+	border-color: var(--primary-pink);
+	padding: 0.5rem 0.5rem;
 
 	color: var(--primary-text);
 	font-weight: bolder;
@@ -106,12 +106,8 @@ export const Button = styled.button<ButtonProps>`
 
 	transition: background-color ease 0.6s;
 
-	&.active {
-		background: transparent !important;
-	}
-
 	&:hover {
-		border: 2px solid var(--primary-pink);
+		border-width: 2px;
 		background: transparent;
 	}
 

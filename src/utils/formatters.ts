@@ -26,3 +26,7 @@ export function shuffle(arr: Array<any>): Array<any> {
 	}
 	return arr
 }
+
+export function convertToArray(arr: Array<any>): Array<any> {
+	return arr
+}
