@@ -5,6 +5,7 @@ import React from "react"
 import Header from "../components/Header"
 import Featured from "../components/Featured"
 import Catalogue from "../components/Catalogue"
+import Footer from "../components/Footer"
 
 const Home: React.FC = () => {
 	return (
@@ -14,6 +15,8 @@ const Home: React.FC = () => {
 			<Featured />
 
 			<Catalogue />
+
+			<Footer />
 		</>
 	)
 }

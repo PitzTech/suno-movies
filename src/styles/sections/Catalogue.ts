@@ -96,6 +96,7 @@ export const Button = styled.button<ButtonProps>`
 	font-weight: bolder;
 
 	box-sizing: border-box;
+	cursor: pointer;
 
 	height: 2.3rem;
 	width: 10rem;
@@ -109,6 +110,10 @@ export const Button = styled.button<ButtonProps>`
 	&:hover {
 		border-width: 2px;
 		background: transparent;
+	}
+
+	&.centralButton {
+		margin: 3rem auto 0;
 	}
 
 	@media (max-width: 943px) {

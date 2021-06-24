@@ -156,6 +156,10 @@ function Catalogue(): JSX.Element {
 					</nav>
 
 					<CatalogueMovies isGrid={isGrid}>{getCatalogueMovies()}</CatalogueMovies>
+
+					<Button className="centralButton" isClicked={false}>
+						Carregar mais
+					</Button>
 				</CentralDelimiter>
 			</CatalogueElement>
 			<GlobalContainerStyle />

@@ -11,6 +11,7 @@ import { solvePosterUrl, solveParams } from "../utils/requestSolver"
 // Components
 
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 // Visual
 
@@ -53,6 +54,7 @@ function MoviePage(): JSX.Element {
 	return (
 		<>
 			<Header />
+
 			<BackgroundContainer>
 				<CentralDelimiter>
 					<MovieItem>
@@ -99,6 +101,8 @@ function MoviePage(): JSX.Element {
 					<Button to="/">Voltar</Button>
 				</MovieTrailerElement>
 			</CentralDelimiter>
+
+			<Footer />
 		</>
 	)
 }
