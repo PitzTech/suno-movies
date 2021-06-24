@@ -34,6 +34,16 @@ export const MoviesContextProvider: React.FC = ({ children }) => {
 		})
 	}, [])
 
+	function nextPage(): void {
+		setCataloguePage(oldValue => oldValue + 1)
+	}
+
+	const handleNextPage = useCallback(page => {
+		conn.get(solveParams(`/discover/movie?page=${page}`)).then(response => {
+			setCatalogueMovies(oldValue => [...oldValue, ...response.data.results])
+		})
+	}, [])
+
 	useEffect(() => {
 		FetchMovies()
 	}, [FetchMovies])
@@ -44,9 +54,18 @@ export const MoviesContextProvider: React.FC = ({ children }) => {
 		})
 	}, [search])
 
+	useEffect(() => handleNextPage(cataloguePage), [cataloguePage, handleNextPage])
+
 	return (
 		<MoviesContext.Provider
-			value={{ featuredMovies, catalogueMovies, search, setSearch, searchResults }}
+			value={{
+				featuredMovies,
+				catalogueMovies,
+				search,
+				setSearch,
+				searchResults,
+				nextPage
+			}}
 		>
 			{children}
 		</MoviesContext.Provider>

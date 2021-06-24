@@ -18,4 +18,5 @@ export interface MoviesContextProps {
 	search?: string
 	setSearch: React.Dispatch<string>
 	searchResults: SearchProps[]
+	nextPage: () => void
 }

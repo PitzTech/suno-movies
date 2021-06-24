@@ -31,7 +31,7 @@ import { TiThList } from "react-icons/ti"
 
 function Catalogue(): JSX.Element {
 	const [isGrid, setIsGrid] = useState(true)
-	const { catalogueMovies } = useContext(MoviesContext)
+	const { catalogueMovies, nextPage } = useContext(MoviesContext)
 	const { screenWidth, mobileBreakPoint } = useViewport()
 
 	const [filteredCategory, setFilteredCategory] = useState<number>(0)
@@ -53,6 +53,10 @@ function Catalogue(): JSX.Element {
 		setIsOrderingPopular(!isOrderingPopular)
 	}
 
+	function handleNextPage(): void {
+		nextPage()
+	}
+
 	// Custom Select Button
 
 	function getCatalogueMovies(): JSX.Element[] {
@@ -67,10 +71,10 @@ function Catalogue(): JSX.Element {
 			moviesList = moviesList.sort((fisrt, second) => {
 				return second.vote_average - fisrt.vote_average
 			})
-		} else {
-			// shuffle
-			moviesList = shuffle(moviesList)
-		}
+		} // else {
+		// 	// shuffle
+		// 	moviesList = shuffle(moviesList)
+		// }
 
 		return convertToArray(moviesList).map(
 			movie =>
@@ -157,7 +161,11 @@ function Catalogue(): JSX.Element {
 
 					<CatalogueMovies isGrid={isGrid}>{getCatalogueMovies()}</CatalogueMovies>
 
-					<Button className="centralButton" isClicked={false}>
+					<Button
+						className="centralButton"
+						onClick={handleNextPage}
+						isClicked={false}
+					>
 						Carregar mais
 					</Button>
 				</CentralDelimiter>
