@@ -71,10 +71,10 @@ function Catalogue(): JSX.Element {
 			moviesList = moviesList.sort((fisrt, second) => {
 				return second.vote_average - fisrt.vote_average
 			})
-		} // else {
-		// 	// shuffle
-		// 	moviesList = shuffle(moviesList)
-		// }
+		} else {
+			// shuffle
+			moviesList = shuffle(moviesList)
+		}
 
 		return convertToArray(moviesList).map(
 			movie =>
