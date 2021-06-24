@@ -86,4 +86,7 @@ export const MovieItem = styled.div`
 	@media (max-width: 943px) {
 		width: 15.5rem;
 	}
+	@media (max-width: 743px) {
+		width: 21.5rem;
+	}
 `

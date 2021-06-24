@@ -2,6 +2,7 @@ import React, { useContext, useState, useRef, useLayoutEffect } from "react"
 import { Link } from "react-router-dom"
 
 import MoviesContext from "../context/MoviesContext"
+import useViewport from "../utils/useViewport"
 
 // Utils
 
@@ -18,11 +19,13 @@ import { FaCircle, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa"
 function Featured(): JSX.Element {
 	const { featuredMovies } = useContext(MoviesContext)
 	const [scrollSpeed, setScrollSpeed] = useState(0)
+	const { screenWidth } = useViewport()
 
 	// Horizontal Scroll Params
 
 	useLayoutEffect(() => {
 		setScrollSpeed(MOVIE_ROW.current?.clientWidth || 0)
+		alert(screenWidth)
 	}, [])
 
 	// REMOVE THIS LINE
@@ -45,12 +48,9 @@ function Featured(): JSX.Element {
 			setScroll(Math.min(0, scroll + scrollSpeed))
 			return
 		}
-		if (side == "right" && scroll > window.innerWidth - LIST_LENGTH) {
+		if (side == "right" && scroll > screenWidth - LIST_LENGTH) {
 			setScroll(
-				Math.max(
-					window.innerWidth - (LIST_LENGTH + ADITIONAL_BORDER),
-					scroll - scrollSpeed
-				)
+				Math.max(screenWidth - (LIST_LENGTH + ADITIONAL_BORDER), scroll - scrollSpeed)
 			)
 		}
 	}

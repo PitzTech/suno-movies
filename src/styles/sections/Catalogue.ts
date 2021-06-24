@@ -77,6 +77,15 @@ export const CatalogueElement = styled.section`
 			height: 2.5rem;
 		}
 	}
+	@media (max-width: 743px) {
+		.leftAlign {
+			& > * {
+				font-size: 1.5rem;
+				height: 5rem;
+				width: 45%;
+			}
+		}
+	}
 `
 
 interface ButtonProps {
@@ -118,6 +127,12 @@ export const Button = styled.button<ButtonProps>`
 
 	@media (max-width: 943px) {
 		height: 2.5rem;
+	}
+	@media (max-width: 743px) {
+		width: auto;
+		font-size: 1.7rem;
+		padding: 1.7rem;
+		border-radius: 0.3rem;
 	}
 `
 
