@@ -12,14 +12,16 @@ import { indicator } from "../services/requests"
 // Types
 
 import { Movie } from "../types/movies"
-import { MoviesContextProps } from "../types/context"
+import { MoviesContextProps, SearchProps } from "../types/context"
 
-const MoviesContext = createContext<MoviesContextProps>({})
+const MoviesContext = createContext({} as MoviesContextProps)
 
 export const MoviesContextProvider: React.FC = ({ children }) => {
 	const [featuredMovies, setFeaturedMovies] = useState<Movie[]>([])
 	const [catalogueMovies, setCatalogueMovies] = useState<Movie[]>([])
 	const [cataloguePage, setCataloguePage] = useState(1)
+	const [search, setSearch] = useState("")
+	const [searchResults, setSearchResults] = useState<SearchProps[]>([])
 
 	const FetchMovies = useCallback(() => {
 		// Featured
@@ -36,8 +38,16 @@ export const MoviesContextProvider: React.FC = ({ children }) => {
 		FetchMovies()
 	}, [FetchMovies])
 
+	useEffect(() => {
+		conn.get(solveParams(`/search/movie?query=${search}&page=1`)).then(response => {
+			setSearchResults(response.data.results)
+		})
+	}, [search])
+
 	return (
-		<MoviesContext.Provider value={{ featuredMovies, catalogueMovies }}>
+		<MoviesContext.Provider
+			value={{ featuredMovies, catalogueMovies, search, setSearch, searchResults }}
+		>
 			{children}
 		</MoviesContext.Provider>
 	)

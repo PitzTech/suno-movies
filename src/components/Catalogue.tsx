@@ -43,32 +43,38 @@ function Catalogue(): JSX.Element {
 
 	function getCatalogueMovies(): JSX.Element[] {
 		const shuffledMovies = shuffle(catalogueMovies || [])
-		return shuffledMovies.map(movie => (
-			<Link to={`/filme/${movie.id}`} key={movie.id}>
-				<MovieItem isGrid={isGrid}>
-					{/* {<div className="cover">{movie.title}</div>} */}
-					<img src={solvePosterUrl(movie.poster_path, "w400")} alt={movie.title} />
+		return shuffledMovies.map(
+			movie =>
+				movie.poster_path && (
+					<Link to={`/filme/${movie.id}`} key={movie.id}>
+						<MovieItem isGrid={isGrid}>
+							{/* {<div className="cover">{movie.title}</div>} */}
+							<img
+								src={solvePosterUrl(movie.poster_path, "w400")}
+								alt={movie.title}
+							/>
 
-					<div className="info">
-						<h2 className="infoTitle">
-							{isGrid ? limitText(movie.title, 25) : movie.title}
-						</h2>
-						<p className="categories pink">
-							{getCategoriesName(movie.genre_ids, 2).join(", ")}
-						</p>
-						<div className="rating">
-							<span className="starIcon pink">
-								<FaStar />
-							</span>
-							<p>{movie.vote_average}</p>
-						</div>
-						<p className="description">
-							{limitText(movie.overview, isGrid ? 180 : 400)}
-						</p>
-					</div>
-				</MovieItem>
-			</Link>
-		))
+							<div className="info">
+								<h2 className="infoTitle">
+									{isGrid ? limitText(movie.title, 25) : movie.title}
+								</h2>
+								<p className="categories pink">
+									{getCategoriesName(movie.genre_ids, 2).join(", ")}
+								</p>
+								<div className="rating">
+									<span className="starIcon pink">
+										<FaStar />
+									</span>
+									<p>{movie.vote_average}</p>
+								</div>
+								<p className="description">
+									{limitText(movie.overview, isGrid ? 180 : 400)}
+								</p>
+							</div>
+						</MovieItem>
+					</Link>
+				)
+		)
 	}
 
 	return (

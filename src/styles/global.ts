@@ -11,6 +11,8 @@ export default createGlobalStyle`
 		--secondary-text: #9F9FA0;
 
 		--primary-pink: #FF559E;
+		--secondary-pink: #252529;
+		--secondary-pink-contrast: #313136;
    }
 
 	::-webkit-scrollbar {

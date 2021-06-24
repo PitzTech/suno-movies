@@ -74,29 +74,34 @@ function Featured(): JSX.Element {
 						ref={MOVIE_ROW}
 						style={{ marginLeft: scroll }}
 					>
-						{shuffle(featuredMovies || []).map(movie => (
-							<MovieItem key={movie.id}>
-								<Link to={`/filme/${movie.id}`}>
-									{/* {<div className="cover">{movie.title}</div>} */}
-									<img
-										src={solvePosterUrl(movie.poster_path, "w400")}
-										alt={movie.title}
-									/>
-								</Link>
-								<div className="info">
-									<h2 className="infoTitle">{limitText(movie.title, 17)}</h2>
-									<p className="categories pink">
-										{getCategoriesName(movie.genre_ids, 2).join(", ")}
-									</p>
-									<div className="rating">
-										<span className="starIcon pink">
-											<FaStar />
-										</span>
-										<p>{movie.vote_average}</p>
-									</div>
-								</div>
-							</MovieItem>
-						))}
+						{shuffle(featuredMovies || []).map(
+							movie =>
+								movie.poster_path && (
+									<MovieItem key={movie.id}>
+										<Link to={`/filme/${movie.id}`}>
+											{/* {<div className="cover">{movie.title}</div>} */}
+											<img
+												src={solvePosterUrl(movie.poster_path, "w400")}
+												alt={movie.title}
+											/>
+										</Link>
+										<div className="info">
+											<h2 className="infoTitle">
+												{limitText(movie.title, 17)}
+											</h2>
+											<p className="categories pink">
+												{getCategoriesName(movie.genre_ids, 2).join(", ")}
+											</p>
+											<div className="rating">
+												<span className="starIcon pink">
+													<FaStar />
+												</span>
+												<p>{movie.vote_average}</p>
+											</div>
+										</div>
+									</MovieItem>
+								)
+						)}
 					</div>
 				</Carousel>
 			</CentralDelimiter>
