@@ -18,6 +18,8 @@ export const HeaderElement = styled.header`
 
 		display: flex;
 		align-items: center;
+
+		cursor: pointer;
 	}
 `
 
