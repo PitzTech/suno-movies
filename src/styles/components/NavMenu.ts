@@ -11,7 +11,7 @@ export const NavElement = styled.nav`
 	}
 
 	.searchIcon {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		margin-top: -0.1rem;
 
 		align-items: center;
@@ -43,6 +43,13 @@ export const NavElement = styled.nav`
 		&:hover {
 			color: var(--primary-pink);
 			border-color: var(--primary-pink);
+		}
+	}
+
+	@media (max-width: 943px) {
+		.searchIcon {
+			font-size: 2.3rem;
+			padding-left: 0;
 		}
 	}
 `
