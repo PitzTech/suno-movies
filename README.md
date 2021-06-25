@@ -57,6 +57,7 @@ Esse projeto encontra-se em desenvolvimento, sendo previsto a criação dos segu
 
 -  Seletor Customizado
 -  Indicação baseada nos gêneros mais acessados
+-  Otimização da responsividade
 
 ## 👷 Como usar
 
