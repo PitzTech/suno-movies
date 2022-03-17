@@ -28,7 +28,7 @@
 	Uma plataforma de filmes construida durante o desafio técnico do processo seletivo da Suno. Baseada em ReactJS, Typescript, Styled Components e TMDB API.
 </h3>
 
-## 🚀 Tecnologias
+## 🚀 Tecnologias 
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
